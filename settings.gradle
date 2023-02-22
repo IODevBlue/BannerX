@@ -15,3 +15,7 @@ dependencyResolutionManagement {
 rootProject.name = "BannerX"
 include ':sample'
 include ':library'
+include ':basetransformer'
+include ':transformers'
+include ':baseindicator'
+include ':indicators'
