@@ -1,41 +1,28 @@
 package com.blueiobase.api.android.bannerx.basetransformer
 
+import android.os.Parcelable
 import android.view.View
 import androidx.viewpager2.widget.ViewPager2
 
 /**
  * The base class for all [Transformers][ViewPager2.PageTransformer] provided for `BannerX`.
+ *
+ * To further understand the [Float] position parameter:
+ * - < -1.0F: Invisible banner to the far left
+ * - <= 0.0F: A banner to the immediate left of centered banner
+ * - 0: The banner completely centered and fully on screen.
+ * - <= 1.0: A banner to the immediate right of centered banner
+ * - *>* 1.0F: Invisible banner to the far right
  * @author IODevBlue
  * @since 1.0.0
  */
-abstract class BannerXTransformer: ViewPager2.PageTransformer {
+abstract class BannerXTransformer: ViewPager2.PageTransformer, Parcelable {
 
     override fun transformPage(banner: View, position: Float) {
-        val viewPager2 =
-            if(banner.parent is ViewPager2) banner.parent as ViewPager2
-            else return
-        when(val bp = bannerPosition(viewPager2, banner)) {
-            in -1F..0F -> transformLeftBanner(banner, bp)
-            in 0F..1F -> transformRightBanner(banner, bp)
-            else -> transformInvisibleBanners(banner, bp)
-        }
-    }
-
-    /**
-     * Gets the position of [banner] as it is in the [viewPager2].
-     * @param viewPager2 The [ViewPager2] containing [banner]
-     * @param banner The [View] whose position should be calculated
-     * @return A [Float] indicating position of the [banner]
-     * - < -1.0F = Invisible banner to the far left
-     * - <= 0.0F = A banner to the immediate left of centered banner
-     * - 0 = The banner completely centered and fully on Screen.
-     * - <= 1.0 = A banner to the immediate right of centered banner
-     * - *>* 1.0F = Invisible banner to the far right
-     */
-    private fun bannerPosition(viewPager2: ViewPager2, banner: View): Float {
-        viewPager2.apply {
-            val width = measuredWidth - paddingLeft - paddingRight
-            return (banner.left - scrollX - paddingLeft/width).toFloat()
+        when(position) {
+            in -1F..0F -> transformLeftBanner(banner, position)
+            in 0F..1F -> transformRightBanner(banner, position)
+            else -> transformInvisibleBanners(banner, position)
         }
     }
 
