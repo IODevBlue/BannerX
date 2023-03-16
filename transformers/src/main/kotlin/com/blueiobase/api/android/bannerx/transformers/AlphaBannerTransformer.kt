@@ -1,7 +1,10 @@
 package com.blueiobase.api.android.bannerx.transformers
 
+import android.os.Parcel
 import android.view.View
 import com.blueiobase.api.android.bannerx.basetransformer.BannerXTransformer
+import kotlinx.parcelize.Parceler
+import kotlinx.parcelize.Parcelize
 
 /**
  * This is the same as the `DefaultBannerTransformer` except that it adds an additional transparency feature to exiting and entering Banners.
@@ -10,7 +13,21 @@ import com.blueiobase.api.android.bannerx.basetransformer.BannerXTransformer
  * @author IODevBlue
  * @since 1.0.0
  */
-class AlphaBannerTransformer(): BannerXTransformer() {
+@Parcelize
+class AlphaBannerTransformer: BannerXTransformer() {
+
+    private companion object: Parceler<AlphaBannerTransformer> {
+        override fun create(parcel: Parcel): AlphaBannerTransformer {
+            return AlphaBannerTransformer().apply {
+                alphaSeed = parcel.readFloat()
+            }
+        }
+
+        override fun AlphaBannerTransformer.write(parcel: Parcel, flags: Int) {
+            parcel.writeFloat(alphaSeed)
+        }
+
+    }
 
     /** The minimum alpha value between 0.0F to 1.0F. **Default:** 0.5F. */
     var alphaSeed: Float = 0.5F

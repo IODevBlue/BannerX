@@ -2,6 +2,7 @@ package com.blueiobase.api.android.bannerx.transformers
 
 import android.view.View
 import com.blueiobase.api.android.bannerx.basetransformer.BannerXTransformer
+import kotlinx.parcelize.Parcelize
 import kotlin.math.abs
 
 
@@ -11,6 +12,7 @@ import kotlin.math.abs
  * @author IODevBlue
  * @since 1.0.0
  */
+@Parcelize
 class OverlayBannerTransformer(
     /** The scale applied to the `scaleX()` and `scaleY()` respectively for each Banner. **Default:** 0.75F. */
     var scale: Float = 0.75F,
@@ -30,6 +32,7 @@ class OverlayBannerTransformer(
                 scaleX = it
                 scaleY = it
             }
+            translationX = -width * scale * position
             translationZ = position
         }
     }
@@ -41,6 +44,7 @@ class OverlayBannerTransformer(
                 scaleX = it
                 scaleY = it
             }
+            translationX = width * scale * -position
             translationZ = -position
         }
     }

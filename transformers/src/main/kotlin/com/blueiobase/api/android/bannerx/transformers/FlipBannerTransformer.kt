@@ -2,6 +2,7 @@ package com.blueiobase.api.android.bannerx.transformers
 
 import android.view.View
 import com.blueiobase.api.android.bannerx.basetransformer.BannerXTransformer
+import kotlinx.parcelize.Parcelize
 
 /**
  * This flips and turns a Banner over 180 degrees:
@@ -12,11 +13,12 @@ import com.blueiobase.api.android.bannerx.basetransformer.BannerXTransformer
  * @author IODevBlue
  * @since 1.0.0
  */
+@Parcelize
 class FlipBannerTransformer: BannerXTransformer() {
 
     companion object {
         /** Representing a complete 180 degrees. */
-       @JvmStatic private val CIRCLE_ANGLE = 180.0F
+       private const val CIRCLE_ANGLE = 180.0F
     }
 
     override fun transformLeftBanner(view: View, position: Float) {

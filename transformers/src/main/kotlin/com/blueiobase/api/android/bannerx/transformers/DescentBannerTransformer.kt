@@ -1,7 +1,10 @@
 package com.blueiobase.api.android.bannerx.transformers
 
+import android.os.Parcel
 import android.view.View
 import com.blueiobase.api.android.bannerx.basetransformer.BannerXTransformer
+import kotlinx.parcelize.Parceler
+import kotlinx.parcelize.Parcelize
 
 /**
  * A [BannerXTransformer] involving two Banners which translates the leftward Banner to the left (if exiting the screen) or to the right
@@ -9,10 +12,28 @@ import com.blueiobase.api.android.bannerx.basetransformer.BannerXTransformer
  * depth and reducing its alpha (if exiting the screen).
  *
  * Transformation is only performed between two Banners at the same time which are adjacent each other.
+ *
+ * **NOTE:** This transformer completely overrides and disregards the `applyBannerOnClickScale` XML attribute and `BannerScaleAnimateParams` behaviour
+ * when applied on `BannerX`.
  * @author IODevBlue
  * @since 1.0.0
  */
-class DescentBannerTransformer(): BannerXTransformer() {
+@Parcelize
+class DescentBannerTransformer: BannerXTransformer() {
+
+    private companion object: Parceler<DescentBannerTransformer> {
+        override fun create(parcel: Parcel): DescentBannerTransformer {
+            return DescentBannerTransformer().apply {
+                descent = parcel.readFloat()
+            }
+        }
+
+        override fun DescentBannerTransformer.write(parcel: Parcel, flags: Int) {
+            parcel.writeFloat(descent)
+        }
+
+    }
+
 
     /** The minimum depth (between `0.6F to 1.0F`) of the rightward Banner while descending and emerging. **Default:** 0.6F. */
     var descent: Float = 0.6F
