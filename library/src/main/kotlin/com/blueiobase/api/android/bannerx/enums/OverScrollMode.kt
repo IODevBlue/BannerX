@@ -8,10 +8,10 @@ import com.blueiobase.api.android.bannerx.BannerX
  * @since 1.0.0
  */
 enum class OverScrollMode {
-    /** Always allow over-scrolling and show over-scroll effect. */
+    /** Always allow over-scrolling. */
     ALWAYS,
     /** Over-scroll only if [BannerX] is large enough to scroll and show over-scroll effect. */
     IF_CONTENT_SCROLLS,
-    /** Over-scrolling is disabled. No over-scroll effect is shown. */
+    /** Over-scrolling is disabled. */
     NEVER
 }
