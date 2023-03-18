@@ -42,19 +42,6 @@ data class IndicatorParams (
     /** The background [Drawable] for the `BannerX` number indicator if there are any. */
     var numberIndicatorBackgroundDrawable: Drawable? = null
 
-    /**
-     * The amount of onscreen visibility the left `Banner` would get when it is not centered during clip mode.
-     * @see clipModeRightBannerMargin
-     */
-    @Dimension var clipModeLeftBannerMargin = 0
-    /**
-     * The amount of onscreen visibility the right `Banner` would get when it is not centered during clip mode.
-     * @see clipModeLeftBannerMargin
-     */
-    @Dimension var clipModeRightBannerMargin = 0
-    /** The padding value applied to the Top position of `BannerX` when clip mode is enabled. */
-    @Dimension var clipModeTopBannerXMargin = 0
-
     /** The horizontal position of the indicator widget. **Default:** [IndicatorHorizontalArrangement.CENTER] = 1L. */
     @IntRange(from = 0L, to = 2L) var indicatorHorizontalArrangement = 1L
     /** Apply a fade animation when the indicator widget is idle. **Default:** `false`. */
