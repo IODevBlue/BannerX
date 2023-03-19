@@ -1,0 +1,174 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.kotlin.plugin.parcelize'
+    id 'signing'
+    id 'maven-publish'
+    id 'org.jetbrains.dokka'
+}
+
+def releaseVersion = '1.0.0'
+
+android {
+    compileSdk 33
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 33
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    publishing {
+        singleVariant('release') {}
+    }
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            maven(MavenPublication) {
+                groupId = 'io.github.iodevblue'
+                artifactId = 'bannerx-basetransformer'
+                version = releaseVersion
+                artifact androidJavadocJar
+                artifact androidSourcesJar
+                artifact androidJar
+                from components.release
+
+                pom {
+                    name = 'BannerX-BaseTransformer'
+                    description = 'Library containing the DefaultBannerTransformer for BannerX and the abstract BannerXTransformer super class.'
+                    url = 'https://github.com/IODevBlue/BannerX.git'
+                    packaging = 'jar'
+
+                    licenses {
+                        license {
+                            name = 'Apache License Version 2.0'
+                            url = 'http://www.apache.org/licenses/LICENSE-2.0'
+                        }
+                    }
+
+                    developers {
+                        developer {
+                            id = 'iodevblue'
+                            name = 'IO DevBlue'
+                            email = 'iodevblue@gmail.com'
+                        }
+                    }
+
+                    scm {
+                        connection = 'scm:git:git://github.com/IODevBlue/BannerX.git'
+                        developerConnection = 'scm:git:ssh://github.com/IODevBlue/BannerX.git'
+                        url = 'https://github.com/IODevBlue/BannerX.git'
+                    }
+                    repositories {
+                        def releaseUrl = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+                        def snapshotUrl = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
+
+                        maven {
+                            credentials {
+                                username = sonatypeUsername
+                                password = sonatypePassword
+                            }
+                            url = uri(releaseVersion.endsWith('SNAPSHOT')? snapshotUrl:releaseUrl)
+                        }
+                    }
+                    signing {
+                        sign publishing.publications.maven
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+dokkaHtml {
+    moduleName.set("BannerX-BaseTransformer")
+    suppressInheritedMembers.set(true)
+    offlineMode.set(false)
+    dokkaSourceSets {
+        configureEach {
+            includes.from("module.md")
+        }
+    }
+}
+
+dokkaJavadoc {
+    moduleName.set("BannerX-BaseTransformer")
+    suppressInheritedMembers.set(true)
+    offlineMode.set(false)
+    dokkaSourceSets {
+        configureEach {
+            includes.from("module.md")
+        }
+    }
+}
+
+task androidSourcesJar(type: Jar) {
+    getArchiveClassifier().set('sources')
+    from android.sourceSets.main.kotlin.srcDirs
+    doLast {
+        copy {
+            from androidSourcesJar
+            into "$rootProject.projectDir/artefacts/bannerx-basetransformer/$releaseVersion"
+        }
+    }
+}
+
+task androidJavadocJar(type: Jar, dependsOn: dokkaJavadoc) {
+    getArchiveClassifier().set('javadoc')
+    from dokkaJavadoc
+    doLast {
+        copy {
+            from androidJavadocJar
+            into "$rootProject.projectDir/artefacts/bannerx-basetransformer/$releaseVersion"
+        }
+    }
+}
+
+task androidJar(type: Jar) {
+    def path = "build/intermediates/full_jar/release/full.jar"
+    def file = new File(path)
+    if (!file.exists()) {
+        println("ERROR: bannerx-basetransformer:- Run the createFullJarRelease task first to create the jar file.")
+        return
+    }
+    from zipTree(file)
+    doLast {
+        copy {
+            from androidJar
+            into "$rootProject.projectDir/artefacts/bannerx-basetransformer/$releaseVersion"
+        }
+    }
+}
+task copyHtmlDoc(type: Copy, dependsOn: dokkaHtml) {
+    from "build/dokka/html"
+    into "$rootProject.projectDir/artefacts/bannerx-basetransformer/$releaseVersion/documentations/html"
+}
+task copyJavadoc(type: Copy, dependsOn: dokkaJavadoc) {
+    from "build/dokka/javadoc"
+    into "$rootProject.projectDir/artefacts/bannerx-basetransformer/$releaseVersion/documentations/javadoc"
+}
+
+dependencies {
+    implementation "androidx.core:core-ktx:$androidx_core"
+    implementation "androidx.appcompat:appcompat:$appcompat"
+    implementation "com.google.android.material:material:$google_material"
+}
