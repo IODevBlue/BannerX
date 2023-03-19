@@ -145,7 +145,7 @@ task androidJavadocJar(type: Jar, dependsOn: dokkaJavadoc) {
 
 task androidJar(type: Jar) {
     def path = "build/intermediates/full_jar/release/full.jar"
-    def file = new File(path)
+    def file = getRootProject().project("bannerx-basetransformer").file(new File(path))
     if (!file.exists()) {
         println("ERROR: bannerx-basetransformer:- Run the createFullJarRelease task first to create the jar file.")
         return
