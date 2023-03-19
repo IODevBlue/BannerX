@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Github_Projects/Android/BannerX/bannerx-baseindicator/src/main/res/drawable/dot_selected.xml" value="0.1005" />
         <entry key="..\:/Github_Projects/Android/BannerX/library/src/main/res/drawable/circular_dot_normal.xml" value="0.1015" />
         <entry key="..\:/Github_Projects/Android/BannerX/library/src/main/res/drawable/dot_normal.xml" value="0.15" />
         <entry key="..\:/Github_Projects/Android/BannerX/library/src/main/res/drawable/dot_selected.xml" value="0.152" />

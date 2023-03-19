@@ -12,12 +12,12 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/baseindicator" />
-            <option value="$PROJECT_DIR$/basetransformer" />
-            <option value="$PROJECT_DIR$/indicators" />
+            <option value="$PROJECT_DIR$/bannerx-baseindicator" />
+            <option value="$PROJECT_DIR$/bannerx-basetransformer" />
+            <option value="$PROJECT_DIR$/bannerx-indicators" />
+            <option value="$PROJECT_DIR$/bannerx-transformers" />
             <option value="$PROJECT_DIR$/library" />
             <option value="$PROJECT_DIR$/sample" />
-            <option value="$PROJECT_DIR$/transformers" />
           </set>
         </option>
       </GradleProjectSettings>

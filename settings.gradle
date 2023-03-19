@@ -10,12 +10,13 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        mavenLocal()
     }
 }
 rootProject.name = "BannerX"
 include ':sample'
 include ':library'
-include ':basetransformer'
-include ':transformers'
-include ':baseindicator'
-include ':indicators'
+include ':bannerx-basetransformer'
+include ':bannerx-transformers'
+include ':bannerx-baseindicator'
+include ':bannerx-indicators'
