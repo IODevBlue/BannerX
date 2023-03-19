@@ -96,6 +96,7 @@ afterEvaluate {
             }
         }
     }
+
 }
 
 dokkaHtml {
@@ -142,8 +143,14 @@ task androidJavadocJar(type: Jar, dependsOn: dokkaJavadoc) {
     }
 }
 
-task androidJar(type: Jar, dependsOn: getRootProject().project("sample").task("createFullJarRelease")) {
-    from zipTree("build/intermediates/full_jar/release/full.jar")
+task androidJar(type: Jar) {
+    def path = "build/intermediates/full_jar/release/full.jar"
+    def file = getRootProject().project("bannerx-baseindicator").file(new File(path))
+    if (!file.exists()) {
+        println("ERROR: bannerx-baseindicator:- Run the createFullJarRelease task first to create the jar file.")
+        return
+    }
+    from zipTree(file)
     doLast {
         copy {
             from androidJar
@@ -159,6 +166,7 @@ task copyJavadoc(type: Copy, dependsOn: dokkaJavadoc) {
     from "build/dokka/javadoc"
     into "$rootProject.projectDir/artefacts/bannerx-baseindicator/$releaseVersion/documentations/javadoc"
 }
+
 dependencies {
     implementation "androidx.core:core-ktx:$androidx_core"
     implementation "androidx.appcompat:appcompat:$appcompat"

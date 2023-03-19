@@ -1,4 +1,4 @@
-#Module baseindicator
+#Module bannerx-baseindicator
 This module contains the default indicator for BannerX and the abstract BannerXIndicator super class.
 
 It contains the following packages:
