@@ -102,7 +102,7 @@ afterEvaluate {
 dokkaHtml {
     moduleName.set("BannerX-BaseTransformer")
     suppressInheritedMembers.set(true)
-    offlineMode.set(false)
+    offlineMode.set(true)
     dokkaSourceSets {
         configureEach {
             includes.from("module.md")
@@ -113,7 +113,7 @@ dokkaHtml {
 dokkaJavadoc {
     moduleName.set("BannerX-BaseTransformer")
     suppressInheritedMembers.set(true)
-    offlineMode.set(false)
+    offlineMode.set(true)
     dokkaSourceSets {
         configureEach {
             includes.from("module.md")

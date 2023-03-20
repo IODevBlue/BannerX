@@ -114,7 +114,7 @@ dokkaHtml {
 dokkaJavadoc {
     moduleName.set("BannerX-Transformers")
     suppressInheritedMembers.set(true)
-    offlineMode.set(false)
+    offlineMode.set(true)
     dokkaSourceSets {
         configureEach {
             includes.from("module.md")
