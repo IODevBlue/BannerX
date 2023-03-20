@@ -28,6 +28,7 @@ class OverlayBannerTransformer(
      * Constructor an [OverlayBannerTransformer] using a [Pair] object
      * @param pair [Pair] whose first value is the applied [scale] while the second value is the applied [alpha].
      */
+    @Suppress("Unused")
     constructor(pair: Pair<Float, Float>): this(pair.first, pair.second)
 
     override fun transformLeftBanner(view: View, position: Float) {
