@@ -8,6 +8,11 @@ import kotlinx.parcelize.Parcelize
  * This pushes/punches in the current Banner and applies an alpha value on it as it displays the next Banner.
  *
  * Transformation is only performed between two Banners at the same time which are adjacent each other.
+ *
+ *  **NOTE:** This Transformer might not operate well when `applyBannerOnClickScale` XML attribute is set to `true` or when
+ * `BannerScaleAnimateParams` is operational in `BannerX`. This is because both classes would attempt to manipulate the `scaleX` and `scaleY` value
+ * of a `Banner` simultaneously which distorts the animation. It is recommended to remove usage of the `BannerScaleAnimateParams` when using
+ * this transformer.
  * @author IODevBlue
  * @since 1.0.0
  */

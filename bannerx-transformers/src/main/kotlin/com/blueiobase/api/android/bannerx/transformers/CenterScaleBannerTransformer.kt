@@ -15,6 +15,11 @@ import kotlinx.parcelize.Parcelize
  * A fade animation can be applied along with the transformation to make it more appealing. This is disabled by default.
  *
  * Transformation is only performed between two Banners at the same time which are adjacent each other.
+ *
+ * **NOTE:** This Transformer does not operate well when `applyBannerOnClickScale` XML attribute is set to `true` or when
+ * `BannerScaleAnimateParams` is operational in `BannerX`. This is because both classes would attempt to manipulate the `scaleX` and `scaleY` value
+ * of a `Banner` simultaneously which distorts the animation. It is recommended to remove usage of the `BannerScaleAnimateParams` when using
+ * this transformer.
  * @author IODevBlue
  * @since 1.0.0
  */
