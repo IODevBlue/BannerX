@@ -16,8 +16,14 @@ It contains these classes:
 - DefaultBannerIndicator
 - IndicatorParams
 
+@author IODevBlue &copy; 2023
+@since v1.0.0
+
 #Package com.blueiobase.api.android.bannerx.baseindicator.enums
 The enums package contains enum classes for BannerX-BaseIndicator
 
 It contains these classes:
 - IndicatorHorizontalArrangement
+
+@author IODevBlue &copy; 2023
+@since v1.0.0

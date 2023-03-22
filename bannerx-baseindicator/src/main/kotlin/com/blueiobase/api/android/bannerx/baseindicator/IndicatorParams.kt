@@ -4,7 +4,6 @@ import android.graphics.Typeface
 import android.graphics.drawable.Drawable
 import androidx.annotation.ColorInt
 import androidx.annotation.Dimension
-import androidx.annotation.IntRange
 import com.blueiobase.api.android.bannerx.baseindicator.enums.IndicatorHorizontalArrangement
 
 /**
@@ -42,8 +41,14 @@ data class IndicatorParams (
     /** The background [Drawable] for the `BannerX` number indicator if there are any. */
     var numberIndicatorBackgroundDrawable: Drawable? = null
 
-    /** The horizontal position of the indicator widget. **Default:** [IndicatorHorizontalArrangement.CENTER] = 1L. */
-    @IntRange(from = 0L, to = 2L) var indicatorHorizontalArrangement = 1L
+    /** The horizontal position of the indicator widget. Should be in the range `[0L..2L]` **Default:** [IndicatorHorizontalArrangement.CENTER] = 1L. */
+    var indicatorHorizontalArrangement = 1L
+        set(value) {
+            field = when(value) {
+                !in 0L..2L -> 1L
+                else -> value
+            }
+        }
     /** Apply a fade animation when the indicator widget is idle. **Default:** `false`. */
     var indicatorFadeOnIdle = false
     /** The time it takes for the indicator to be visible when idle before it fades away. */
