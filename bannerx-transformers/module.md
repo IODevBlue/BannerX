@@ -19,3 +19,6 @@ It contains these classes:
 - PunchyBannerTransformer
 - ScaleBannerTransformer
 - SidedStackBannerTransformer
+
+@author IODevBlue &copy; 2023
+@since v1.0.0

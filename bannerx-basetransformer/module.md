@@ -12,3 +12,6 @@ This is base package for the BannerX-BaseTransformer module.
 It contains these classes:
 - BannerXTransformer
 - DefaultBannerTransformer
+
+@author IODevBlue &copy; 2023
+@since v1.0.0
