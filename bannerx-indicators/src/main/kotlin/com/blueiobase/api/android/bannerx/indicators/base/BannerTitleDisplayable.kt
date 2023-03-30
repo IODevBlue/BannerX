@@ -1,4 +1,4 @@
-package com.blueiobase.api.android.bannerx.baseindicator
+package com.blueiobase.api.android.bannerx.indicators.base
 
 /**
  * Interface contract for `BannerXIndicator` classes that display `Banner` titles.

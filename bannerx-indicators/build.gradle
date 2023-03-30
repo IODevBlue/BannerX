@@ -170,8 +170,6 @@ task copyJavadoc(type: Copy, dependsOn: dokkaJavadoc) {
 
 
 dependencies {
-
-    implementation "io.github.iodevblue:bannerx-baseindicator:1.0.0"
     implementation "androidx.core:core-ktx:$androidx_core"
     implementation "androidx.appcompat:appcompat:$appcompat"
     implementation "com.google.android.material:material:$google_material"

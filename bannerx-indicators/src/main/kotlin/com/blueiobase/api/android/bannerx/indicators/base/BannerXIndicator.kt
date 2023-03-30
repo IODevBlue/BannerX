@@ -1,4 +1,4 @@
-package com.blueiobase.api.android.bannerx.baseindicator
+package com.blueiobase.api.android.bannerx.indicators.base
 
 import android.content.Context
 import android.os.Parcelable

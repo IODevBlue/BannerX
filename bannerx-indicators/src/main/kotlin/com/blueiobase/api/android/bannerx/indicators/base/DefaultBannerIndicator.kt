@@ -1,4 +1,4 @@
-package com.blueiobase.api.android.bannerx.baseindicator
+package com.blueiobase.api.android.bannerx.indicators.base
 
 import android.content.Context
 import android.graphics.Typeface
@@ -18,6 +18,7 @@ import androidx.annotation.ColorInt
 import androidx.annotation.Dimension
 import androidx.core.content.ContextCompat
 import com.blueiobase.api.android.bannerx.baseindicator.enums.IndicatorHorizontalArrangement
+import com.blueiobase.api.android.bannerx.indicators.R
 import kotlinx.parcelize.IgnoredOnParcel
 import kotlinx.parcelize.Parcelize
 
@@ -34,7 +35,8 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 class DefaultBannerIndicator(
     @IgnoredOnParcel private val context: Context? = null,
-    @IgnoredOnParcel override val params: IndicatorParams? = null): BannerXIndicator(params), BannerTitleDisplayable {
+    @IgnoredOnParcel override val params: IndicatorParams? = null): BannerXIndicator(params),
+    BannerTitleDisplayable {
 
     /** The drawable indicator representing an unselected `Banner` object. */
     @IgnoredOnParcel private var indicatorUnselectedDrawable: Drawable? = null
