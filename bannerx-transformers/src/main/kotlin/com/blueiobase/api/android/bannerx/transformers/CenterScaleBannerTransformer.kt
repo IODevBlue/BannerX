@@ -2,19 +2,19 @@ package com.blueiobase.api.android.bannerx.transformers
 
 import android.os.Parcel
 import android.view.View
-import com.blueiobase.api.android.bannerx.basetransformer.BannerXTransformer
+import com.blueiobase.api.android.bannerx.transformers.base.BannerXTransformer
 import kotlinx.parcelize.Parceler
 import kotlinx.parcelize.Parcelize
 
 /**
- * This zooms in the rightward Banner from the center (when entering the screen) while simultaneously zooming out the leftward Banner inwardly towards the
+ * This zooms in the rightward `Banner` from the center (when entering the screen) while simultaneously zooming out the leftward `Banner` inwardly towards the
  * center.
- * Also vice versa, it zooms out the rightward Banner towards the center (when exiting the screen) while simultaneously zooming in the leftward Banner
+ * Also vice versa, it zooms out the rightward `Banner` towards the center (when exiting the screen) while simultaneously zooming in the leftward `Banner`
  * outwardly from the center.
  *
  * A fade animation can be applied along with the transformation to make it more appealing. This is disabled by default.
  *
- * Transformation is only performed between two Banners at the same time which are adjacent each other.
+ * Transformation is only performed between two `Banners` at the same time which are adjacent each other.
  *
  * **NOTE:** This Transformer does not operate well when `applyBannerOnClickScale` XML attribute is set to `true` or when
  * `BannerScaleAnimateParams` is operational in `BannerX`. This is because both classes would attempt to manipulate the `scaleX` and `scaleY` value

@@ -1,7 +1,7 @@
 package com.blueiobase.api.android.bannerx.transformers
 
 import android.view.View
-import com.blueiobase.api.android.bannerx.basetransformer.BannerXTransformer
+import com.blueiobase.api.android.bannerx.transformers.base.BannerXTransformer
 import kotlinx.parcelize.IgnoredOnParcel
 import kotlinx.parcelize.Parcelize
 import kotlin.math.abs
@@ -10,7 +10,7 @@ import kotlin.math.abs
  * This [BannerXTransformer] stacks `Banners` on top each other on the right hand side and translates
  * the top most Banner to the left offscreen.
  *
- * This is similar to the [OverlayBannerTransformer] but without leftward Banners.
+ * This is similar to the [OverlayBannerTransformer] but without leftward `Banners`.
  *
  *  **NOTE:** This Transformer might not operate well when `applyBannerOnClickScale` XML attribute is set to `true` or when
  * `BannerScaleAnimateParams` is operational in `BannerX`. This is because both classes would attempt to manipulate the `scaleX` and `scaleY` value

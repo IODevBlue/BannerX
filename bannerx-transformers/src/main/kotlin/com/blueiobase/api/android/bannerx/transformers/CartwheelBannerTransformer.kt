@@ -2,16 +2,16 @@ package com.blueiobase.api.android.bannerx.transformers
 
 import android.os.Parcel
 import android.view.View
-import com.blueiobase.api.android.bannerx.basetransformer.BannerXTransformer
+import com.blueiobase.api.android.bannerx.transformers.base.BannerXTransformer
 import kotlinx.parcelize.Parceler
 import kotlinx.parcelize.Parcelize
 
 /**
- * This performs a cartwheel on the current Banner and spins it:
- * - to the left to reveal the rightward Banner.
- * - to the right to reveal the leftward Banner.
+ * This performs a cartwheel on the current `Banner` and spins it:
+ * - to the left to reveal the rightward `Banner`.
+ * - to the right to reveal the leftward `Banner`.
  *
- * Transformation is only performed between two Banners at the same time which are adjacent each other.
+ * Transformation is only performed between two `Banners` at the same time which are adjacent each other.
  * @author IODevBlue
  * @since 1.0.0
  */

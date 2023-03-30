@@ -1,14 +1,14 @@
 package com.blueiobase.api.android.bannerx.transformers
 
 import android.view.View
-import com.blueiobase.api.android.bannerx.basetransformer.BannerXTransformer
+import com.blueiobase.api.android.bannerx.transformers.base.BannerXTransformer
 import kotlinx.parcelize.Parcelize
 import kotlin.math.abs
 
 
 /**
- * A [BannerXTransformer] which overlays the center-most Banner above the edges of its immediate left and right Banner. It stretches the Y coordinates of
- * the Banner approaching the center.
+ * A [BannerXTransformer] which overlays the center-most `Banner` above the edges of its immediate left and right `Banner`. It stretches the Y coordinates of
+ * the `Banner` approaching the center.
  *
  * **NOTE:** This Transformer does not operate well when `applyBannerOnClickScale` XML attribute is set to `true` or when
  * `BannerScaleAnimateParams` is operational in `BannerX`. This is because both classes would attempt to manipulate the `scaleX` and `scaleY` value

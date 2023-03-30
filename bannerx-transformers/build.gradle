@@ -169,6 +169,5 @@ task copyJavadoc(type: Copy, dependsOn: dokkaJavadoc) {
 }
 
 dependencies {
-    implementation "io.github.iodevblue:bannerx-basetransformer:1.0.0"
     implementation "com.google.android.material:material:$google_material"
 }

@@ -1,4 +1,4 @@
-package com.blueiobase.api.android.bannerx.basetransformer
+package com.blueiobase.api.android.bannerx.transformers.base
 
 import android.os.Parcel
 import android.os.Parcelable

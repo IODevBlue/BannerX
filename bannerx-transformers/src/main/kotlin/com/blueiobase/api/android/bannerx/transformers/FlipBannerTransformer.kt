@@ -1,13 +1,13 @@
 package com.blueiobase.api.android.bannerx.transformers
 
 import android.view.View
-import com.blueiobase.api.android.bannerx.basetransformer.BannerXTransformer
+import com.blueiobase.api.android.bannerx.transformers.base.BannerXTransformer
 import kotlinx.parcelize.Parcelize
 
 /**
- * This flips and turns a Banner over 180 degrees:
- * - to the left to reveal the rightward Banner.
- * - to the right to reveal the leftward Banner.
+ * This flips and turns a `Banner` over 180 degrees:
+ * - to the left to reveal the rightward `Banner`.
+ * - to the right to reveal the leftward `Banner`.
  *
  * Transformation is only performed between two Banners at the same time which are adjacent each other.
  * @author IODevBlue
