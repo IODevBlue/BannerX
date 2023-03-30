@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BannerX">
+        <!-- Enable or disable auto-scrolling/slideshows. It is enabled by default. -->
+        <attr name="isAutoLoopable" format="boolean"/>
+        <!-- Enable or disable user initiated infinite scrolling. It is disabled by default. -->
+        <attr name="isManualLoopable" format="boolean"/>
+        <!-- The time it takes for slideshows to swap banners. Default is 5 seconds. NOTE: 1000 = 1 second.-->
+        <attr name="autoLoopDelay" format="integer|reference"/>
+        <!-- The swiping speed applied during auto-looping. Default is 1 seconds. NOTE: 1000 = 1 second.-->
+        <attr name="autoLoopSpeed" format="integer"/>
+        <!-- Make BannerX swipeable and interactive. Enabled by default. -->
+        <attr name="isSwipeable" format="boolean"/>
+        <!-- Display stub banners when no data is available immediately BannerX starts for the first time.
+             The bannerPlaceholderDrawable attribute should be overridden to display custom images for these stub banners else one would be
+             provided by the library. Enabled by default. -->
+        <attr name="displayStubsOnStart" format="boolean" />
+        <!-- The number of stub banners to display when BannerX is initialized for the first time. Maximum of 5 stubs. This is only applied if displayStubsOnStart is true. -->
+        <attr name="numberOfStubs" format="integer" />
+
+
+        <!-- The orientation and arrangement of banners in BannerX. Default is HORIZONTAL. -->
+        <attr name="bannerXOrientation" format="enum">
+            <!-- Arrange banners horizontally. -->
+            <enum name="HORIZONTAL" value="0"/>
+            <!-- Arrange banners vertically. If the direction of movement is LTR (left-to-right), then it moves up -> down else if the direction
+                 of movement is RTL (right-to-left), then it moves down -> up. -->
+            <enum name="VERTICAL" value="1"/>
+        </attr>
+        <!-- The direction of movement when auto-looping is enabled. -->
+        <attr name="bannerXDirection" format="enum">
+            <!--  Move banners Left-to-Right. If the orientation is VERTICAL, then the movement direction would be up -> down.-->
+            <enum name="LTR" value="0"/>
+            <!--  Move `Banners` Right-to-Left. If the orientation is VERTICAL, then the movement direction would be down -> up.-->
+            <enum name="RTL" value="1"/>
+        </attr>
+
+
+        <!-- Enable or disable the indicator widget. It is enabled by default. -->
+        <attr name="allowIndicator" format="boolean"/>
+        <!-- Truncate any long text by appending a '...' at the end it. It is disabled by default. -->
+        <attr name="applyMarqueeOnIndicatorText" format="boolean"/>
+        <!-- The drawable used by the indicator widget to indicate an unselected banner. -->
+        <attr name="indicatorUnselectedDrawable" format="reference"/>
+        <!-- The drawable used by the indicator widget to indicate a selected banner. -->
+        <attr name="indicatorSelectedDrawable" format="reference"/>
+        <!-- The horizontal arrangement of the indicator panels. Default is CENTER. -->
+        <attr name="indicatorHorizontalArrangement" format="enum">
+            <!-- Position the indicator panels at the start position/left edge of BannerX. -->
+            <enum name="START" value="0" />
+            <!-- Position the indicator panels at the center of BannerX. -->
+            <enum name="CENTER" value="1" />
+            <!-- Position the indicator panels at the end position/right edge of BannerX. -->
+            <enum name="END" value="2" />
+        </attr>
+        <!-- The vertical alignment of the indicator. Default is BOTTOM. -->
+        <attr name="indicatorVerticalAlignment" format="enum">
+            <!-- Position the indicator at the top of BannerX. -->
+            <enum name="TOP" value="0" />
+            <!-- Position the indicator at the bottom of BannerX. -->
+            <enum name="BOTTOM" value="1" />
+        </attr>
+        <!-- The background of the indicator. -->
+        <attr name="indicatorBackground" format="reference|color" />
+        <!-- The uniform padding value applied to the inner horizontal bounds at the Start and End positions of the indicator. -->
+        <attr name="indicatorStartEndPadding" format="dimension" />
+        <!-- The uniform padding value applied to the inner vertical bounds at the Top and Bottom positions of the indicator.-->
+        <attr name="indicatorTopBottomPadding" format="dimension" />
+        <!-- The uniform margin value applied to the outer horizontal bounds at the Start and End positions of the indicator. -->
+        <attr name="indicatorStartEndMargin" format="dimension" />
+        <!-- The color of texts used in the indicator. -->
+        <attr name="indicatorTextColor" format="reference|color" />
+        <!-- The size of texts used in the indicator. -->
+        <attr name="indicatorTextSize" format="dimension" />
+        <!-- The font applied to texts used in the indicator. -->
+        <attr name="indicatorTextFont" format="reference" />
+        <!-- Apply a fade animation when the indicator is idle (when BannerX is not swiping). It is disabled by default. -->
+        <attr name="indicatorFadeOnIdle" format="boolean"/>
+        <!-- The time it takes for the indicator to be visible when idle before it fades away. Default is 3 seconds. NOTE: 1000 = 1 second. -->
+        <attr name="indicatorFadeOnIdleDuration" format="integer"/>
+        <!-- Enable or disable displaying number of banners on the indicator widget. It is disabled by default. -->
+        <attr name="allowNumberIndicator" format="boolean" />
+        <!-- The background of the number indicator. -->
+        <attr name="numberIndicatorBackground" format="reference|color" />
+        <!-- Enable or disable the indicator widget's TextView. It is disabled by default. -->
+        <attr name="showIndicatorText" format="boolean" />
+
+
+        <!-- Enable or disable clicks on each banner. Enabled by default. -->
+        <attr name="isBannerClickable" format="boolean"/>
+        <!-- The resource ID for the drawable acting as a placeholder for banners with no available display image. -->
+        <attr name="bannerPlaceholderDrawable" format="color|reference" />
+        <!-- The tint applied to the banner placeholder drawable. Default is BLUE. -->
+        <attr name="bannerPlaceholderDrawableTint" format="color"/>
+        <!-- The drawable used as the default background for banner images. Default is GREY -->
+        <attr name="bannerDefaultBackground" format="reference|color"/>
+        <!-- Apply compression to banner images if the dimensions are too large >(1012 x 1216). It is disabled by default. -->
+        <attr name="bannerImageCompress" format="boolean" />
+        <!-- The maximum width of banner images when compression is enabled. -->
+        <attr name="bannerImageCompressMaxWidth" format="float"/>
+        <!-- The maximum height of banner images when compression is enabled. -->
+        <attr name="bannerImageCompressMaxHeight" format="float"/>
+        <!-- Enable or disable applying corner radius to each banner image. Enabled by default.-->
+        <attr name="applyBannerImageCornerRadius" format="boolean" />
+        <!-- The radius applied to all corners of each banner image. For more flexible customization options, consider using setShapeAppearanceModel() in code. -->
+        <attr name="bannerImageCornerRadius" format="dimension"/>
+        <!-- The margin between the bottom of the displayed banners and the top of the indicator widget.-->
+        <attr name="bannerBottomMargin" format="dimension"/>
+        <!-- The image scale type to apply to a Banner images. Default is FIT_XY. -->
+        <attr name="bannerImageScaleType" format="enum">
+            <enum name="MATRIX" value="0"/>
+            <enum name="FIT_XY" value="1"/>
+            <enum name="FIT_START" value="2"/>
+            <enum name="FIT_CENTER" value="3"/>
+            <enum name="FIT_END" value="4"/>
+            <enum name="CENTER" value="5"/>
+            <enum name="CENTER_CROP" value="6"/>
+            <enum name="CENTER_INSIDE" value="7"/>
+        </attr>
+        <!-- Apply a scale animation (punch or expand) to the banner when it is touched or clicked, It is enabled by default.
+             For more flexibility, provide a BannerScaleAnimateParams using setBannerScaleAnimateParams() in code. -->
+        <attr name="applyBannerOnClickScale" format="boolean" />
+        <!-- The factor applied to the scale animation on the banner, Default is 0.955F. A value greater than 1.0
+             applies an expand animation, a value less than 1.0 applies a punch animation.
+             The applyBannerOnClickScale attribute has to be set to true before this value would have any effect. -->
+        <attr name="bannerOnClickScale" format="float"/>
+        <!-- The duration of the scale animation, Default is 50 (milliseconds).
+             The applyBannerOnClickScale attribute has to be set to true before this value would have any effect. -->
+        <attr name="bannerOnClickScaleDuration" format="integer"/>
+        <!-- The duration of the release animation, Default is 125 (milliseconds).
+             The applyBannerOnClickScale attribute has to be set to true before this value would have any effect. -->
+        <attr name="bannerOnClickScaleReleaseDuration" format="integer"/>
+
+
+        <!-- Enables and disables clip mode. This is when BannerX removes padding values when scrolling and applies it when scrolling stops.. It is disabled by default.-->
+        <attr name="isClipMode" format="boolean" />
+        <!-- The amount of onscreen visibility the left banner would get when it is not centered during clip mode. Default is 30dp. -->
+        <attr name="clipModeLeftBannerMargin" format="dimension"/>
+        <!-- The amount of onscreen visibility the right banner would get when it is not centered during clip mode. Default is 30dp. -->
+        <attr name="clipModeRightBannerMargin" format="dimension"/>
+        <!-- The padding value applied to the Top position of BannerX when clip mode is enabled. Default is 10dp.-->
+        <attr name="clipModeTopBannerXMargin" format="dimension"/>
+        <!-- Apply the left and right banner clip margin values on the indicator widget when clip mode is enabled.. -->
+        <attr name="clipModeOnIndicator" format="boolean"/>
+        
+        <!-- -->
+    </declare-styleable>
+</resources>
