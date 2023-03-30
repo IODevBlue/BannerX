@@ -102,7 +102,7 @@
         <attr name="bannerImageCompressMaxHeight" format="float"/>
         <!-- Enable or disable applying corner radius to each banner image. Enabled by default.-->
         <attr name="applyBannerImageCornerRadius" format="boolean" />
-        <!-- The radius applied to all corners of each banner image. For more flexible customization options, consider using setShapeAppearanceModel() in code. -->
+        <!-- The radius applied to all corners of each banner image. Default is 12dp. For more flexible customization options, consider using setShapeAppearanceModel() in code. -->
         <attr name="bannerImageCornerRadius" format="dimension"/>
         <!-- The margin between the bottom of the displayed banners and the top of the indicator widget.-->
         <attr name="bannerBottomMargin" format="dimension"/>
