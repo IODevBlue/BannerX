@@ -3,15 +3,40 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android_SDK/Sdk/platforms/android-33/data/res/layout/simple_spinner_dropdown_item.xml" value="0.2171875" />
         <entry key="..\:/Github_Projects/Android/BannerX/bannerx-baseindicator/src/main/res/drawable/dot_selected.xml" value="0.1005" />
+        <entry key="..\:/Github_Projects/Android/BannerX/bannerx-baseindicator/src/main/res/drawable/dot_unselected.xml" value="0.1675" />
+        <entry key="..\:/Github_Projects/Android/BannerX/bannerx-indicators/src/main/res/drawable/dot_selected.xml" value="0.1275" />
+        <entry key="..\:/Github_Projects/Android/BannerX/bannerx-indicators/src/main/res/drawable/dot_unselected.xml" value="0.1275" />
+        <entry key="..\:/Github_Projects/Android/BannerX/bannerx/src/main/res/drawable/dot_selected.xml" value="0.126" />
         <entry key="..\:/Github_Projects/Android/BannerX/library/src/main/res/drawable/circular_dot_normal.xml" value="0.1015" />
         <entry key="..\:/Github_Projects/Android/BannerX/library/src/main/res/drawable/dot_normal.xml" value="0.15" />
         <entry key="..\:/Github_Projects/Android/BannerX/library/src/main/res/drawable/dot_selected.xml" value="0.152" />
         <entry key="..\:/Github_Projects/Android/BannerX/library/src/main/res/drawable/dot_unselected.xml" value="0.1" />
         <entry key="..\:/Github_Projects/Android/BannerX/library/src/main/res/layout/item_bannerx_image.xml" value="0.22" />
         <entry key="..\:/Github_Projects/Android/BannerX/library/src/main/res/layout/item_image.xml" value="0.2046875" />
+        <entry key="..\:/Github_Projects/Android/BannerX/sample/src/main/res/drawable/circle_bg.xml" value="0.1" />
+        <entry key="..\:/Github_Projects/Android/BannerX/sample/src/main/res/drawable/edit_text_claret.xml" value="0.1" />
+        <entry key="..\:/Github_Projects/Android/BannerX/sample/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.1625" />
+        <entry key="..\:/Github_Projects/Android/BannerX/sample/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.174" />
+        <entry key="..\:/Github_Projects/Android/BannerX/sample/src/main/res/drawable/ic_baseline_pause_24.xml" value="0.1" />
+        <entry key="..\:/Github_Projects/Android/BannerX/sample/src/main/res/drawable/ic_baseline_play_arrow_24.xml" value="0.1785" />
+        <entry key="..\:/Github_Projects/Android/BannerX/sample/src/main/res/drawable/ic_github.xml" value="0.126" />
         <entry key="..\:/Github_Projects/Android/BannerX/sample/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1" />
-        <entry key="..\:/Github_Projects/Android/BannerX/sample/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Github_Projects/Android/BannerX/sample/src/main/res/drawable/indicator_banner_selected.xml" value="0.204" />
+        <entry key="..\:/Github_Projects/Android/BannerX/sample/src/main/res/drawable/square_outline.xml" value="0.224" />
+        <entry key="..\:/Github_Projects/Android/BannerX/sample/src/main/res/layout-land/activity_fullscreen.xml" value="0.2012288786482335" />
+        <entry key="..\:/Github_Projects/Android/BannerX/sample/src/main/res/layout/activity_fullscreen.xml" value="0.1" />
+        <entry key="..\:/Github_Projects/Android/BannerX/sample/src/main/res/layout/activity_indicators.xml" value="0.1" />
+        <entry key="..\:/Github_Projects/Android/BannerX/sample/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="..\:/Github_Projects/Android/BannerX/sample/src/main/res/layout/activity_playground.xml" value="0.33" />
+        <entry key="..\:/Github_Projects/Android/BannerX/sample/src/main/res/layout/activity_transformers.xml" value="0.22" />
+        <entry key="..\:/Github_Projects/Android/BannerX/sample/src/main/res/layout/custom_banner_layout.xml" value="0.22" />
+        <entry key="..\:/Github_Projects/Android/BannerX/sample/src/main/res/layout/fragment_photo_info.xml" value="0.2171875" />
+        <entry key="..\:/Github_Projects/Android/BannerX/sample/src/main/res/layout/fragment_photographer_info.xml" value="0.22" />
+        <entry key="..\:/Github_Projects/Android/BannerX/sample/src/main/res/layout/item_bannerx_recyclerview.xml" value="0.25" />
+        <entry key="..\:/Github_Projects/Android/BannerX/sample/src/main/res/layout/item_indicators_recyclerview.xml" value="0.21666666666666667" />
+        <entry key="..\:/Github_Projects/Android/BannerX/sample/src/main/res/layout/item_text_switcher.xml" value="0.75" />
       </map>
     </option>
   </component>
