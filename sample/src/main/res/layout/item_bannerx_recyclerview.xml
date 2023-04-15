@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <TextView
+        android:id="@+id/item_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_marginStart="20dp"
+        android:textSize="15sp"
+        />
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:dividerInsetStart="20sp"
+        app:dividerColor="@color/main_blue"
+        android:layout_below="@id/item_name"
+        app:dividerInsetEnd="20sp"
+        />
+
+    <com.blueiobase.api.android.bannerx.BannerX
+        android:id="@+id/bannerx_item"
+        android:layout_width="match_parent"
+        android:layout_below="@id/divider"
+        android:layout_height="@dimen/bannerx_advert_height"
+        android:layout_marginTop="10dp"
+        app:autoLoopDelay="3000"
+        app:autoLoopSpeed="800"
+        app:bannerImageCompress="true"
+        app:indicatorSelectedDrawable="@drawable/indicator_banner_selected"
+        app:bannerXDirection="LTR"
+        app:isClipMode="true"
+        app:clipModeOnIndicator="true"
+        app:indicatorFadeOnIdle="false"
+        app:bannerBottomMargin="30dp"
+        app:indicatorHorizontalArrangement="CENTER"
+        app:indicatorTextColor="@color/black"
+        app:isManualLoopable="true"
+        app:numberOfStubs="3"
+        app:showIndicatorText="true"
+        />
+
+</RelativeLayout>

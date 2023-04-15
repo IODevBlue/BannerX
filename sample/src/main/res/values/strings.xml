@@ -1,3 +1,53 @@
 <resources>
     <string name="app_name">BannerX</string>
+    <string-array name="playground_instructions">
+        <item>Avoid using extreme values!</item>
+        <item>1000 equals 1 second.</item>
+        <item>Double tap to open photograph information from Pexels API.</item>
+        <item>Switch checkboxes faster by tapping on preceding textview.</item>
+        <item>Open spinner options faster by tapping on preceding textview.</item>
+        <item>Swipe left or right on any textview with a long attribute name.</item>
+        <item>When in fullscreen preview, you can double tap to like.</item>
+    </string-array>
+    <string-array name="tap_instructions">
+        <item>Long tap: To display photograph information.</item>
+        <item>Double tap: To navigate to photographer\'s url in browser.</item>
+        <item>Single tap: To navigate to photograph\'s url in browser.</item>
+        <item>When in fullscreen preview, you can double tap to like.</item>
+    </string-array>
+    <string name="image_button">Image Button</string>
+    <string name="photographs_from_pexel_api">Photographs from Pexels API</string>
+    <string name="visit">Visit</string>
+    <string name="transformers">Transformers</string>
+    <string name="playground">Playground</string>
+    <string name="indicators">Indicators</string>
+    <string name="fullscreen">Fullscreen</string>
+    <string name="long_tap_instruction">Long tap: To display photograph information.</string>
+    <string name="double_tap_instruction">Double tap: To navigate to photographer\'s url in browser.</string>
+    <string name="single_tap_instruction">Single tap: To navigate to photograph\'s url in browser.</string>
+    <string name="bannerx_indicators">BannerX-Indicators</string>
+    <string name="bannerx_transformers">BannerX-Transformers</string>
+    <string name="bannerx_playground">Bannerx (playground)</string>
+    <string name="allow_number_indicator">allowNumberIndicator</string>
+    <string name="indicator_params">IndicatorParams</string>
+    <string name="indicator_horizontal_arrangement">indicatorHorizontalArrangement</string>
+    <string name="indicator_fade_on_idle">indicatorFadeOnIdle</string>
+    <string name="indicator_fade_on_idle_duration">indicatorFadeOnIdleDuration</string>
+    <string name="apply">Apply</string>
+    <string name="is_auto_loop">isAutoLoopable</string>
+    <string name="banner_scale_animate_params">BannerScaleAnimateParams</string>
+    <string name="release_duration">releaseDuration</string>
+    <string name="scale_duration">scaleDuration</string>
+    <string name="scale">scale</string>
+    <string name="is_manual_loopable">isManualLoopable</string>
+    <string name="is_swipeable">isSwipeable</string>
+    <string name="is_banner_clickable">isBannerClickable</string>
+    <string name="auto_loop_delay">autoLoopDelay</string>
+    <string name="auto_loop_speed">autoLoopSpeed</string>
+    <string name="show_indicator_text">showIndicatorText</string>
+    <string name="allow_indicator">allowIndicator</string>
+    <string name="bannerx_direction">bannerXDirection</string>
+    <string name="bannerx_orientation">bannerXOrientation</string>
+    <string name="indicator_vertical_align">indicatorVerticalAlignment</string>
+
 </resources>

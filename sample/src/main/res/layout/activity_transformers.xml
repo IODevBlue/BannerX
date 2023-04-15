@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TransformersActivity"
+    >
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/transformers_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:theme="@style/Theme.BannerX.AppBarOverlay"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/transformers_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/Theme.BannerX.PopupOverlay"
+            app:navigationIcon="@drawable/ic_baseline_arrow_back_ios_24"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/bannerx_transformers"
+                android:textColor="@color/white"
+                />
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextSwitcher
+        android:id="@+id/instructions_text_switcher"
+        android:layout_width="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/transformers_appbar"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        />
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider"
+        android:layout_below="@id/instructions_text_switcher"
+        android:layout_width="match_parent"
+        app:dividerColor="@color/main_blue"
+        android:layout_height="wrap_content"
+        />
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/transformers_spinner"
+        android:layout_width="match_parent"
+        android:textAlignment="center"
+        android:layout_height="50dp"
+        android:layout_below="@id/divider"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/main_blue"
+        />
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider_2"
+        android:layout_below="@id/transformers_spinner"
+        android:layout_width="match_parent"
+        app:dividerColor="@color/main_blue"
+        android:layout_height="wrap_content"
+        />
+    <com.blueiobase.api.android.bannerx.BannerX
+        android:id="@+id/bannerx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/divider_2"
+        app:autoLoopDelay="3000"
+        app:autoLoopSpeed="800"
+        android:layout_alignParentBottom="true"
+        app:bannerBottomMargin="30dp"
+        app:clipModeOnIndicator="true"
+        app:indicatorBackground="@android:color/transparent"
+        app:indicatorFadeOnIdle="true"
+        app:indicatorHorizontalArrangement="CENTER"
+        app:indicatorSelectedDrawable="@drawable/indicator_banner_selected"
+        app:indicatorTextColor="@color/black"
+        app:isClipMode="true"
+        app:isManualLoopable="true"
+        app:numberOfStubs="3"
+        app:showIndicatorText="true"
+        />
+
+    <ImageButton
+        android:id="@+id/github_button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="50dp"
+        android:layout_marginEnd="25dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:contentDescription="@string/image_button"
+        android:src="@drawable/ic_github"
+        android:background="@drawable/circle_bg"
+        />
+
+
+</RelativeLayout>
