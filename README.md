@@ -170,7 +170,7 @@ private class CustomBannerViewHolder(view: View): BannerX.BannerViewHolder(view)
 ```
 Instruct `BannerX` to use the `CustomAdapter` implementation by invoking the `useCustomAdapter()`.
 
-**NOTE:** The `useCustomAdapter()` must be called before the providing a list to `BannerX` through `processList()`. For easy setup, the `processList()` can be chained to the `useCustomAdapter()` function:
+**NOTE:** The `useCustomAdapter()` must be called before providing a list to `BannerX` through `processList()`. For easy setup, the `processList()` can be chained to the `useCustomAdapter()` function:
 ```kotlin
 val list = listOf(
   Banner("Banner1").let {
@@ -229,7 +229,7 @@ bannerx.setCustomPageTransformer(
     override fun transformPage(banner: View, position: Float) { }
   }, true)
 ```
-The boolean in the `setCustomPageTransformer()` function informs `BannerX` to continue on the current `Banner`, `false` to start from beginning.
+The boolean in the `setCustomPageTransformer()` function informs `BannerX` to continue on the current `Banner`, use `false` to start from beginning.
 
 **NOTE:** Unlike a `BannerXTransformer`, custom `ViewPager2.PageTransformers` do not survive state and configuration changes.
 
@@ -409,7 +409,7 @@ private class CustomBannerViewHolder extends BannerX.BannerViewHolder {
 ```
 Instruct `BannerX` to use the `CustomAdapter` implementation by invoking the `useCustomAdapter()`.
 
-**NOTE:** The `useCustomAdapter()` must be called before the providing a list to `BannerX` through `processList()`. For easy setup, the `processList()` can be chained to the `useCustomAdapter()` function:
+**NOTE:** The `useCustomAdapter()` must be called before providing a list to `BannerX` through `processList()`. For easy setup, the `processList()` can be chained to the `useCustomAdapter()` function:
 ```java
 List<Banner> list = new ArrayList<>();
 
@@ -486,7 +486,7 @@ bannerx.setCustomPageTransformer((page, position) -> {
 	  //Apply your page transformations here.
   }, false);
 ```
-The boolean in the `setCustomPageTransformer()` function informs `BannerX` to continue on the current `Banner`. `false` to start from beginning.
+The boolean in the `setCustomPageTransformer()` function informs `BannerX` to continue on the current `Banner`. Use `false` to start from beginning.
 
 **NOTE:** Unlike a `BannerXTransformer`, custom `ViewPager2.PageTransformers` do not survive state and configuration changes.
 
