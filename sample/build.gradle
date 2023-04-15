@@ -1,0 +1,72 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
+}
+
+android {
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.blueiobase.api.android.bannerx.sample"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField "String", "API_KEY", "\"${getApiKey()}\""
+        }
+        release {
+            buildConfigField "String", "API_KEY", "\"${getApiKey()}\""
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    sourceSets {
+        main {
+           java {
+                srcDirs 'src/main/pexel'
+            }
+        }
+    }
+}
+
+def getApiKey() {
+    def props = new Properties()
+    def file = rootProject.project("sample").file('secrets.properties')
+    try {
+        props.load(new FileInputStream(file))
+        return props['PEXELS_API_KEY']
+    } catch(ignored) {
+        return ""
+    }
+}
+
+dependencies {
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    def gson = '2.8.9'
+    def okhttp = '4.10.0'
+
+    implementation fileTree(dir:'libs', include:'*.jar')
+    implementation "io.github.iodevblue:bannerx:1.0.0"
+    implementation "io.github.iodevblue:bannerx-transformers:1.0.0"
+
+    implementation "androidx.activity:activity-ktx:1.6.1"
+    implementation "androidx.core:core-ktx:$androidx_core"
+    implementation "androidx.appcompat:appcompat:$appcompat"
+    implementation "com.google.android.material:material:$google_material"
+    implementation "com.google.code.gson:gson:$gson"
+    implementation "com.squareup.okhttp3:okhttp:$okhttp"
+}

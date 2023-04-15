@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/main_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:theme="@style/Theme.BannerX.AppBarOverlay"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/Theme.BannerX.PopupOverlay">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                />
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <FrameLayout
+        android:id="@+id/from_pexel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main_appbar"
+        android:layout_alignBottom="@id/visit_pexel_api"
+        android:layout_toStartOf="@id/visit_pexel_api"
+        android:layout_marginEnd="5dp"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/pexels"
+            android:alpha="0.15"
+            android:contentDescription="@string/image_view"
+            android:scaleType="centerCrop"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:typeface="monospace"
+            android:text="@string/photographs_from_pexel_api"
+            />
+
+    </FrameLayout>
+    <Button
+        android:id="@+id/visit_pexel_api"
+        android:text="@string/visit"
+        android:layout_below="@id/main_appbar"
+        android:layout_alignParentEnd="true"
+        android:layout_width="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:typeface="monospace"
+        android:layout_height="wrap_content"
+        />
+    <TextSwitcher
+        android:id="@+id/instructions_text_switcher"
+        android:layout_width="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/from_pexel"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        />
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider"
+        android:layout_below="@id/instructions_text_switcher"
+        android:layout_width="match_parent"
+        app:dividerColor="@color/main_blue"
+        android:layout_height="wrap_content"
+        />
+    <com.blueiobase.api.android.bannerx.BannerX
+        android:id="@+id/bannerx"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bannerx_advert_height"
+        android:layout_below="@id/divider"
+        android:layout_marginTop="10dp"
+        app:autoLoopDelay="3000"
+        app:isClipMode="true"
+        app:autoLoopSpeed="800"
+        app:bannerBottomMargin="30dp"
+        app:indicatorBackground="@android:color/transparent"
+        app:indicatorFadeOnIdle="true"
+        app:indicatorHorizontalArrangement="CENTER"
+        app:indicatorSelectedDrawable="@drawable/indicator_banner_selected"
+        app:indicatorTextColor="@color/black"
+        app:isManualLoopable="true"
+        app:numberOfStubs="3"
+        app:showIndicatorText="true" />
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/bannerx"
+        android:layout_marginTop="10dp"
+        android:scrollbarThumbVertical="@color/main_blue"
+        android:scrollbarSize="2dp"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <Button
+                android:id="@+id/indicators"
+                android:layout_centerHorizontal="true"
+                android:text="@string/indicators"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                />
+
+            <Button
+                android:id="@+id/transformers"
+                android:layout_below="@id/indicators"
+                android:layout_marginTop="10dp"
+                android:layout_centerInParent="true"
+                android:text="@string/transformers"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                />
+
+            <Button
+                android:id="@+id/playground"
+                android:layout_below="@id/transformers"
+                android:layout_marginTop="10dp"
+                android:layout_centerInParent="true"
+                android:text="@string/playground"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                />
+
+            <Button
+                android:id="@+id/fullscreen"
+                android:layout_below="@id/playground"
+                android:layout_marginTop="10dp"
+                android:layout_centerInParent="true"
+                android:text="@string/fullscreen"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                />
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <ImageButton
+        android:id="@+id/github_button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="50dp"
+        android:layout_marginEnd="25dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:contentDescription="@string/image_button"
+        android:src="@drawable/ic_github"
+        android:background="@drawable/circle_bg"
+        />
+
+
+
+</RelativeLayout>
