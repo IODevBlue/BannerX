@@ -118,7 +118,7 @@ class MainActivity: AppCompatActivity() {
                 navigateTo(TransformersActivity::class.java){ Bundle().apply { putInt("current_pos", currentBanner) } }
             })
             doScaleAnimateOn(fullscreenButton, BannerScaleAnimateParams(), onClickListener = {
-                navigateTo(FullscreenActivity::class.java){ Bundle() }
+                navigateTo(FullscreenActivity::class.java){ Bundle().apply { putInt("current_pos", currentBanner) } }
             })
             doScaleAnimateOn(playgroundButton, BannerScaleAnimateParams(), onClickListener = {
                 navigateTo(PlaygroundActivity::class.java){ Bundle().apply { putInt("current_pos", currentBanner) } }
