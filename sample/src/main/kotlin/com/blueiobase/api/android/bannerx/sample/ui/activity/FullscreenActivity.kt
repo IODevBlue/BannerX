@@ -58,7 +58,7 @@ class FullscreenActivity : AppCompatActivity() {
                         override fun onCreateBannerViewHolder(parent: ViewGroup, viewType: Int): BannerX.BannerViewHolder {
                             return CustomBannerViewHolder(layoutInflater.inflate(R.layout.custom_banner_layout, parent, false))
                         }
-                    }).processList(list, forceUpdateIfEmpty = false)
+                    }).processList(list, forceUpdateIfEmpty = false, intent.extras?.getInt("current_pos")?:0)
                 }
             }
             hasLoaded = true
@@ -91,7 +91,7 @@ class FullscreenActivity : AppCompatActivity() {
                                     override fun onCreateBannerViewHolder(parent: ViewGroup, viewType: Int): BannerX.BannerViewHolder {
                                         return CustomBannerViewHolder(layoutInflater.inflate(R.layout.custom_banner_layout, parent, false))
                                     }
-                                }).processList(list, forceUpdateIfEmpty = false)
+                                }).processList(list, forceUpdateIfEmpty = false, intent.extras?.getInt("current_pos")?:0)
                             }
                             hasLoaded = true
                         }

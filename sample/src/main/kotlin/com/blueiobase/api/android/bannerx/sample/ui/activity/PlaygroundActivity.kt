@@ -87,6 +87,8 @@ class PlaygroundActivity : AppCompatActivity(),
 
     private val indicators by lazy { Indicators() }
 
+    private var isFirstInvoke = true
+
     private val observer =  Observer<MutableList<Banner>> {
         runOnUiThread {
             if(!hasLoaded && app.loadedCompletely) {
@@ -318,7 +320,21 @@ class PlaygroundActivity : AppCompatActivity(),
             (bannerXOrientationSpinner).run {
                 adapter = this@with
                 setSelection(bannerx.bannerXOrientation.ordinal) //Always
-                onItemSelectedListener = this@PlaygroundActivity
+                onItemSelectedListener = object:AdapterView.OnItemSelectedListener {
+                    override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                        if(!isFirstInvoke) { //Bug fix in sample.
+                            bannerx.bannerXOrientation = when(p2) {
+                                1 -> BannerXOrientation.VERTICAL
+                                else -> BannerXOrientation.HORIZONTAL
+                            }
+                        } else {
+                            isFirstInvoke = false
+                        }
+                    }
+
+                    override fun onNothingSelected(p0: AdapterView<*>?) {}
+
+                }
             }
         }
         with(ArrayAdapter(this, android.R.layout.simple_spinner_item, listOf("TOP", "BOTTOM"))) {
@@ -369,10 +385,10 @@ class PlaygroundActivity : AppCompatActivity(),
                 1 -> BannerXDirection.RTL
                 else -> BannerXDirection.LTR
             }
-            bannerXOrientationSpinner -> bannerx.bannerXOrientation = when(p2) {
-                1 -> BannerXOrientation.VERTICAL
-                else -> BannerXOrientation.HORIZONTAL
-            }
+//            bannerXOrientationSpinner -> bannerx.bannerXOrientation = when(p2) {
+//                1 -> BannerXOrientation.VERTICAL
+//                else -> BannerXOrientation.HORIZONTAL
+//            }
             indicatorVertAlignmentSpinner -> bannerx.indicatorVerticalAlignment = when(p2) {
                 0 -> IndicatorVerticalAlignment.TOP
                 else -> IndicatorVerticalAlignment.BOTTOM
