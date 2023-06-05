@@ -8,23 +8,17 @@ import android.net.ConnectivityManager
 import android.net.Network
 import android.net.NetworkCapabilities
 import android.net.NetworkRequest
-import android.os.Build
 import android.provider.Settings
-import android.telephony.TelephonyManager
-import androidx.annotation.RequiresApi
 
 /**
  * This class handles the logic behind retrieving current network state and monitoring airplane mode changes.
  * @author IO DevBlue.
  * @since 1.0.0
  */
-@RequiresApi(Build.VERSION_CODES.M)
 class NetworkValidator(private val context: Context) {
 
     /** Android network [ConnectivityManager]. */
     private val connectivityManager by lazy { context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager }
-    /** Android [TelephonyManager]. */
-    private val telephonyManager = context.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
     /** [BroadcastReceiver] for airplane modes. */
     private var airplaneModeReceiver: AirplaneModeReceiver? = null
 
@@ -66,45 +60,6 @@ class NetworkValidator(private val context: Context) {
             }
         }
         return isOnline
-    }
-
-    /**
-     * Validates if internet connection is available through Wifi.
-     * @return `true` if internet is available through Wifi, `false` if otherwise.
-     */
-    fun isWifiAvailable(): Boolean {
-        connectivityManager.apply {
-            getNetworkCapabilities(activeNetwork)?.let {
-                return it.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) && it.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
-            }
-        }
-        return false
-    }
-
-    /**
-     * Validates if internet connection is available through mobile data.
-     * @return `true` if internet is available through mobile data, `false` if otherwise.
-     */
-    fun isCellularAvailable(): Boolean{
-        if(telephonyManager.dataState != TelephonyManager.DATA_DISCONNECTED)
-            return true
-        return false
-    }
-
-    /**
-     * Validates is airplane mode is active.
-     * @return `true` if airplane mode is active, `false` if otherwise.
-     */
-    fun isAirplaneModeActive() =  Settings.Global.getInt(context.contentResolver, Settings.Global.AIRPLANE_MODE_ON, 0) != 0
-
-    /** Unregisters the [OnAirplaneModeSwitchListener] from listening for airplane mode events. */
-    fun unregisterAirplaneModeSwitchListener() {
-        airplaneModeReceiver?.unregister()
-    }
-
-    /** Registers the [OnAirplaneModeSwitchListener] to start listening for airplane mode events. */
-    fun registerAirplaneModeSwitchListener() {
-        airplaneModeReceiver?.register()
     }
 
     /**

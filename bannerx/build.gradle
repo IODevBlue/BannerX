@@ -11,6 +11,7 @@ def releaseVersion = '1.0.0'
 def moduleID = 'bannerx'
 
 android {
+    namespace 'com.blueiobase.api.android.bannerx'
     compileSdk 33
 
     defaultConfig {

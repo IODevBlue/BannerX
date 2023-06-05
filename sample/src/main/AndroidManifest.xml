@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.blueiobase.api.android.bannerx.sample.ui.activity"
     >
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -18,37 +17,37 @@
         tools:targetApi="33"
         >
         <activity
-            android:name=".FullscreenActivity"
+            android:name=".ui.activity.FullscreenActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".ui.activity.MainActivity"
             android:theme="@style/Theme.BannerX.NoActionBar"
             />
         <activity
-            android:name=".PlaygroundActivity"
+            android:name=".ui.activity.PlaygroundActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/Theme.BannerX.NoActionBar"
-            android:screenOrientation="userPortrait"
-            tools:ignore="LockedOrientationActivity"
-            />
-        <activity
-            android:name=".IndicatorsActivity"
-            android:exported="false"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".ui.activity.MainActivity"
             android:theme="@style/Theme.BannerX.NoActionBar"
             android:screenOrientation="userPortrait"
             tools:ignore="LockedOrientationActivity"
             />
         <activity
-            android:name=".TransformersActivity"
+            android:name=".ui.activity.IndicatorsActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".ui.activity.MainActivity"
             android:theme="@style/Theme.BannerX.NoActionBar"
             android:screenOrientation="userPortrait"
             tools:ignore="LockedOrientationActivity"
             />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.activity.TransformersActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.activity.MainActivity"
+            android:theme="@style/Theme.BannerX.NoActionBar"
+            android:screenOrientation="userPortrait"
+            tools:ignore="LockedOrientationActivity"
+            />
+        <activity
+            android:name=".ui.activity.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.BannerX.NoActionBar"
             android:screenOrientation="userPortrait"

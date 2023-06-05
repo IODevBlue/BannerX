@@ -95,6 +95,8 @@
         app:autoLoopDelay="3000"
         app:isClipMode="true"
         app:autoLoopSpeed="800"
+        app:applyBannerOnClickScale="true"
+        app:bannerOnClickScale="1"
         app:bannerBottomMargin="30dp"
         app:indicatorBackground="@android:color/transparent"
         app:indicatorFadeOnIdle="true"

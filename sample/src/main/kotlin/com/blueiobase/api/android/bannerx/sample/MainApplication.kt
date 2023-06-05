@@ -1,21 +1,21 @@
 package com.blueiobase.api.android.bannerx.sample
 
 import android.app.Application
-import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import android.graphics.drawable.Drawable
 import androidx.lifecycle.MutableLiveData
 import com.blueiobase.api.android.bannerx.model.Banner
-import com.blueiobase.api.android.bannerx.sample.ui.activity.BuildConfig
 import com.pexels.android.Pexels
 import com.pexels.android.model.photo.PhotoResource
 import com.pexels.android.model.video.Photographer
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.async
+import kotlinx.coroutines.launch
 import retrofit2.HttpException
 import java.io.BufferedInputStream
-import java.lang.Exception
 import java.net.URL
 
 class MainApplication: Application() {

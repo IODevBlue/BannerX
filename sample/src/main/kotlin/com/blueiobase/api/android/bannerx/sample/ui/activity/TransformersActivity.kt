@@ -18,6 +18,7 @@ import androidx.lifecycle.Observer
 import com.blueiobase.api.android.bannerx.BannerX
 import com.blueiobase.api.android.bannerx.model.Banner
 import com.blueiobase.api.android.bannerx.sample.MainApplication
+import com.blueiobase.api.android.bannerx.sample.R
 import com.blueiobase.api.android.bannerx.sample.ui.array.Transformers
 import com.blueiobase.api.android.bannerx.sample.ui.fragment.PhotoDialogFragment
 import com.blueiobase.api.android.bannerx.sample.util.makeToast

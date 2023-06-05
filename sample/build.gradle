@@ -5,6 +5,7 @@ plugins {
 }
 
 android {
+    namespace 'com.blueiobase.api.android.bannerx.sample'
     compileSdk 33
 
     defaultConfig {
@@ -15,6 +16,10 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        buildConfig = true
     }
 
     buildTypes {
@@ -55,15 +60,15 @@ def getApiKey() {
 }
 
 dependencies {
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     def gson = '2.8.9'
-    def okhttp = '4.10.0'
+    def okhttp = '4.11.0'
 
     implementation fileTree(dir:'libs', include:'*.jar')
     implementation "io.github.iodevblue:bannerx:1.0.0"
     implementation "io.github.iodevblue:bannerx-transformers:1.0.0"
 
     implementation "androidx.activity:activity-ktx:1.6.1"
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation "androidx.core:core-ktx:$androidx_core"
     implementation "androidx.appcompat:appcompat:$appcompat"
     implementation "com.google.android.material:material:$google_material"
