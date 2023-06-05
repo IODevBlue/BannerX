@@ -26,7 +26,7 @@ Also, the sample implementation contains a Playground to test common features in
 
 Documentations
 --------------
-Documentations are available online in [Javadoc](https://raw.githack.com/IODevBlue/project-docs/main/api/android/bannerx/javadoc/index.html) and [KDoc](https://raw.githack.com/IODevBlue/project-docs/main/api/android/bannerx/html/index.html).
+Documentations are available online in [KDoc](https://raw.githack.com/IODevBlue/project-docs/main/api/android/bannerx/html/index.html).
 
 Uses
 ----
