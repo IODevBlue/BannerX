@@ -15,12 +15,13 @@ import com.blueiobase.api.android.bannerx.BannerX
 import com.blueiobase.api.android.bannerx.enums.ScrollState
 import com.blueiobase.api.android.bannerx.model.Banner
 import com.blueiobase.api.android.bannerx.sample.MainApplication
+import com.blueiobase.api.android.bannerx.sample.R
 import com.blueiobase.api.android.bannerx.sample.ui.fragment.PhotoDialogFragment
 import com.blueiobase.api.android.bannerx.sample.util.makeToast
 import com.blueiobase.api.android.bannerx.transformers.ScaleBannerTransformer
 import com.blueiobase.api.android.bannerx.util.BannerScaleAnimateParams
 import com.blueiobase.api.android.networkvalidator.networkValidator
-import com.blueiobase.app.android.shopper.util.navigateTo
+import com.blueiobase.api.android.bannerx.sample.util.navigateTo
 
 class MainActivity: AppCompatActivity() {
 

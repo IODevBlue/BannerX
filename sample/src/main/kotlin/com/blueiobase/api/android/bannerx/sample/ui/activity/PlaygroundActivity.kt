@@ -22,6 +22,7 @@ import com.blueiobase.api.android.bannerx.enums.IndicatorHorizontalArrangement
 import com.blueiobase.api.android.bannerx.enums.IndicatorVerticalAlignment
 import com.blueiobase.api.android.bannerx.model.Banner
 import com.blueiobase.api.android.bannerx.sample.MainApplication
+import com.blueiobase.api.android.bannerx.sample.R
 import com.blueiobase.api.android.bannerx.sample.ui.array.Indicators
 import com.blueiobase.api.android.bannerx.sample.ui.array.Transformers
 import com.blueiobase.api.android.bannerx.sample.ui.fragment.PhotoDialogFragment

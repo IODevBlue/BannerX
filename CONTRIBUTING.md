@@ -11,6 +11,7 @@ Contributing
 
 Current tasks to be completed
 -----------------------------
+- [ ] BannerX for Compose UI
 - [x] Leftward auto-scrolling movement
 - [x] Push-down/Pull-up animation on each banner when clicked
 - [x] A Double-click listener

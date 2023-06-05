@@ -1,4 +1,4 @@
-package com.blueiobase.app.android.shopper.util
+package com.blueiobase.api.android.bannerx.sample.util
 
 import android.app.Activity
 import android.content.Context

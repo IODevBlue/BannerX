@@ -13,7 +13,7 @@ import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import com.blueiobase.api.android.bannerx.BannerX
 import com.blueiobase.api.android.bannerx.model.Banner
-import com.blueiobase.api.android.bannerx.sample.ui.activity.R
+import com.blueiobase.api.android.bannerx.sample.R
 import com.blueiobase.api.android.bannerx.util.BannerScaleAnimateParams
 import com.pexels.android.model.video.Photographer
 
